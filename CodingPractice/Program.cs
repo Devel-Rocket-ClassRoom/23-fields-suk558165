@@ -5,20 +5,20 @@ using System.Reflection;
 using System.Xml.Linq;
 
 //## 과제 1: 필드가 있는 클래스 만들기
-//Player player = new Player();
-//player.ShowStatus();
-//class Player
-//{
-//    string name;
-//    int health;
+Player player = new Player();
+player.ShowStatus();
+class Player
+{
+    string name;
+    int health;
 
-//public void ShowStatus()
-//{
-//    Console.WriteLine("이름: " + name);
-//    Console.WriteLine("체력: " + health);
-//}
+    public void ShowStatus()
+    {
+        Console.WriteLine("이름: " + name);
+        Console.WriteLine("체력: " + health);
+    }
 }
-## 과제 2: public 필드
+//## 과제 2: public 필드
 Character hero = new Character();
 hero.name = "용사";
 hero.level = 10;
@@ -29,29 +29,18 @@ class Character
     public string name;
     public int level;
 }
-## 과제 3: private 필드
 Character hero = new Character();
-hero.SetInfo("용사", 10);
-hero.ShowInfo();
+hero.name = "용사";           // 외부에서 접근 가능
+hero.level = 10;
+Console.WriteLine(hero.name);
+Console.WriteLine(hero.level);
 
 class Character
 {
-    private string name;
-    private int level;
-
-    public void SetInfo(string n, int lv)
-    {
-        name = n;
-        level = lv;
-    }
-    public void ShowInfo()
-    {
-        Console.WriteLine("이름: " + name);
-        Console.WriteLine("레벨: " + level);
-    }
+    public string name;
+    public int level;
 }
-
-## 과제 4: 선언과 동시에 초기화
+//## 과제 4: 선언과 동시에 초기화
 Player player = new Player();
 player.ShowStatus();
 class Player
@@ -68,7 +57,9 @@ class Player
     }
 }
 
-## 과제 5: 필드 이니셜라이저
+
+
+//## 과제 5: 필드 이니셜라이저
 Say say = new Say();
 say.Hi();
 class Say
@@ -82,7 +73,7 @@ class Say
 }
 
 
-## 과제 6: 배열 필드 초기화
+//## 과제 6: 배열 필드 초기화
 Schedule schedule = new Schedule();
 schedule.PrintWeekDays();
 
@@ -99,7 +90,7 @@ class Schedule
         Console.WriteLine();
     }
 }
-## 과제 7: 기본값 확인
+//## 과제 7: 기본값 확인
 DefaultValues dv = new DefaultValues();
 dv.ShowDefaults();
 class DefaultValues
@@ -117,7 +108,7 @@ class DefaultValues
     }
 
 }
-## 과제 8: 정적 필드 선언과 사용
+//## 과제 8: 정적 필드 선언과 사용
 Counter c1 = new Counter();
 Console.WriteLine("현재 카운트: " + Counter.count);
 Counter c2 = new Counter();
@@ -132,7 +123,7 @@ class Counter
         count++;
     }
 }
-## 과제 9: 인스턴스 필드 vs 정적 필드
+//## 과제 9: 인스턴스 필드 vs 정적 필드
 Player p1 = new Player("용사");
 Player p2 = new Player("마법사");
 Player p3 = new Player("궁수");
@@ -152,7 +143,7 @@ class Player
         totalCount++;
     }
 }
-## 과제 10: readonly 필드
+//## 과제 10: readonly 필드
 GameConfig config = new GameConfig(4);
 config.ShowConfig();
 
@@ -171,7 +162,7 @@ class GameConfig
         Console.WriteLine("최대 플레이어: " + maxPlayers);
     }
 }
-## 과제 11: readonly vs const 비교
+//## 과제 11: readonly vs const 비교
 Example ex = new Example();
 ex.ShowValues();
 class Example
@@ -185,7 +176,7 @@ class Example
     }
 
 }
-## 과제 12: this 키워드
+//## 과제 12: this 키워드
 Player player = new Player();
 player.SetInfo("용사", 10);
 player.ShowInfo();
@@ -207,7 +198,7 @@ class Player
     }
 
 }
-## 과제 13: 다양한 필드 타입 활용
+//## 과제 13: 다양한 필드 타입 활용
 Person person = new Person();
 person.ShowProfile();
 class Person
@@ -225,7 +216,7 @@ class Person
     }
 }
 
-## 과제 14: 게임 캐릭터 클래스
+//## 과제 14: 게임 캐릭터 클래스
 
 `GameCharacter` 클래스에 인스턴스 필드, 정적 필드, 읽기 전용 필드, 상수를 모두 활용합니다. 2명의 캐릭터를 만들고 상태를 출력한 뒤, 한 캐릭터가 데미지를 받는 과정을 구현합니다.
 GameCharacter hero = new GameCharacter("용사", 15);
